@@ -42,7 +42,7 @@ attr_accessor :name
 
   def update()
 
-  sql = "UPDATE customers SET(name) = ($1) WHERE id = $2"
+  sql = "UPDATE customers SET name = $1 WHERE id = $2"
   values = [@name, @id]
   SqlRunner.run(sql, values)
 end
@@ -53,4 +53,13 @@ def delete()
   values = [@id]
   SqlRunner.run(sql, values)
 end
+def stock()
+
+     sql = "SELECT stock.* FROM stock INNER JOIN rentals
+      ON stock.id = rentals.stock_id WHERE rentals.customer_id = $1"
+      values = [@id]
+
+      stock= SqlRunner.run(sql, values)
+      return stock.map{|stock| Stock.new(stock)}
+    end
 end
