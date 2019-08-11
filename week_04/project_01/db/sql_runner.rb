@@ -1,16 +1,18 @@
-require( 'pg' )
+require('pg')
 
 class SqlRunner
 
-  def self.run( sql, values = [] )
+  def self.run(sql, values = [])
+
     begin
-      db = PG.connect({ dbname: 'rental_system', host: 'localhost' })
+      db = PG.connect({dbname: 'rental_system', host: 'localhost'})
+      db.type_map_for_results = PG::BasicTypeMapForResults.new(db)
       db.prepare("query", sql)
-      result = db.exec_prepared( "query", values )
+      result = db.exec_prepared("query", values)
     ensure
-      db.close() if db != nil
+      db.close()
     end
-    return result
+      return result
   end
 
 end

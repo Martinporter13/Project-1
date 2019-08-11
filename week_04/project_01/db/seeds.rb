@@ -1,10 +1,10 @@
-require_relative( "../models/customer.rb" )
-require_relative( "../models/rental.rb" )
+require_relative( "../models/customers.rb" )
+require_relative( "../models/rentals.rb" )
 require_relative( "../models/stock.rb" )
 require("pry-byebug")
 
-Customer.delete_all()
 Rental.delete_all()
+Customer.delete_all()
 Stock.delete_all()
 
 customer1 = Customer.new({
@@ -26,47 +26,59 @@ customer3 = Customer.new({
 customer3.save()
 
 
-inventory1 = Inventory.new({
+stock1 = Stock.new({
   "item_name" => "UW_control",
   "inventory" => 15,
   "price" => 30
   })
 
-inventory1.save()
+stock1.save()
 
-inventory2 = Inventory.new({
+stock2 = Stock.new({
   "item_name" => "Jund",
   "inventory" => 10,
   "price" => 45
   })
 
-inventory2.save()
+stock2.save()
 
-inventory3 = Inventory.new({
+stock3 = Stock.new({
 "item_name" => "UR_phoenix",
 "inventory" => 12,
 "price" => 25
 })
 
-inventory3.save()
+stock3.save()
 
 rental1 = Rental.new({
-  "customer_id" => rental1.id,
+  "customer_id" => customer1.id,
   "stock_id" => stock1.id
   })
 
 rental1.save()
 
 rental2 = Rental.new({
-  "customer_id" => rental2.id,
+  "customer_id" => customer2.id,
   "stock_id" => stock2.id
   })
 
 rental2.save()
 
 rental3 = Rental.new({
-  "customer_id" => rental3.id,
+  "customer_id" => customer3.id,
   "stock_id" => stock3.id
   })
 
 rental3.save()
+
+customer1.name = "Harry"
+  customer1.update
+
+  stock1.item_name = "Tron"
+  stock1.update
+
+  rental1.customer_id = customer2.id
+  rental1.update
+
+binding.pry
+nil

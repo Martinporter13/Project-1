@@ -4,23 +4,24 @@ DROP TABLE stock;
 
 
 
-CREATE TABLE rentals
-(
-  id SERIAL8 primary key,
-  customer_id INT8 references customers(id),
-  stock_id INT8 references stock(id)
-);
 
 CREATE TABLE customers
 (
-  id SERIAL8 primary key,
+  id SERIAL PRIMARY KEY,
   name VARCHAR(255) not null
 );
 
 CREATE TABLE stock
 (
-  id SERIAL8 primary key,
+  id SERIAL PRIMARY KEY,
   item_name VARCHAR(255) not null,
   inventory INT,
   price INT
+);
+
+CREATE TABLE rentals
+(
+  id SERIAL PRIMARY KEY,
+  customer_id INT REFERENCES customers(id) ON DELETE CASCADE,
+  stock_id INT REFERENCES stock(id) ON DELETE CASCADE
 );
