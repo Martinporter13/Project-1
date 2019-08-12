@@ -1,0 +1,10 @@
+<h2><%= @rental.customer.name%><h2>
+
+  <p>Item Name: <%= @rental.stock.item_name%></p>
+  <p>Inventory: <%= @rental.stock.inventory%></p>
+  <p>Price: <%= @rental.stock.price%></p>
+
+
+  <form action="/rentals/<%= @rental.id %>/delete" method="POST">
+    <input type="submit" value="Delete">
+  </form>

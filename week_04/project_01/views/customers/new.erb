@@ -1,0 +1,26 @@
+<h2>Create Customer Profile</h2>
+<form method="POST" action="/customers">
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="name">Customer Name:</label>
+      <input type="text" name="name" id="name"/>
+    </div>
+
+    <div class="form-el">
+      <label for="stock">Current Rentals:</label>
+      <select name="stock_id" id="stock">
+        <% for stock in @stock %>
+            <option value=<%= stock.id %>><%= stock.item_name %></option>
+        <% end %>
+      </select>
+    </div>
+
+
+
+    <div class="form-el">
+      <input type="submit" value="Create Customer Profile"/>
+    </div>
+
+  </div>
+</form>

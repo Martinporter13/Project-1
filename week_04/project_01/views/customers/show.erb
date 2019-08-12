@@ -1,0 +1,10 @@
+<h2><%= @customer.name %></h2>
+
+
+<% for stock in @customer.stock %>
+<p><%=stock.item_name%></p>
+<% end %>
+<a href="/customers/<%= @customer.id %>/edit">Edit</a>
+<form action="/customers/<%= @customer.id %>/delete" method="POST">
+  <input type="submit" value="Delete">
+</form>

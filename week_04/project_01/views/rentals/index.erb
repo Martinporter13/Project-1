@@ -1,0 +1,6 @@
+<h1>Current Rentals</h1>
+<% for rental in @rentals %>
+<li>
+  <a href="/rentals/<%= rental.id %>"><%= rental.customer.name %>
+    <%= rental.stock.item_name%></a></li>
+<% end %>

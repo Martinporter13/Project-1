@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LotusMarket</title>
+
+</head>
+<body>
+<main>
+  <nav id="menu">
+    <li class="menu-item"><a href="/customers">Customers</a></li>
+    <li class="menu-item"><a href="/customers/new">Create Customer Profile</a></li>
+    <li class="menu-item"><a href="/stock">Available Decks</a></li>
+    <li class="menu-item"><a href="/stock/new">Create New Deck</a></li>
+    <li class="menu-item"><a href="/rentals">Current Rentals</a></li>
+    <li class="menu-item"><a href="/rentals/new">Create New Rental</a></li>
+  </nav>
+  <section>
+  <%= yield %>
+  </section>
+  </main>
+</body>
+</html>

@@ -53,6 +53,8 @@ def delete()
   values = [@id]
   SqlRunner.run(sql, values)
 end
+
+
 def stock()
 
      sql = "SELECT stock.* FROM stock INNER JOIN rentals
