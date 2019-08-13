@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('./customers.rb')
 require_relative('./stock.rb')
+require('pry')
 
 
 class Rental
@@ -21,6 +22,7 @@ class Rental
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
     stock = Stock.find(@stock_id)
+    binding.pry
     stock.remove_inventory()
     stock.update()
 

@@ -1,0 +1,51 @@
+html {
+  font-family: 'Tangerine', cursive;
+  font-size: 1.5em;
+
+}
+
+body {
+   background-color: blue;
+   background-image:  url('/images/background.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+
+}
+
+
+h1 {
+  color: #E873E8;
+
+}
+
+title {
+
+  color: magenta;
+  font-family: 'Tangerine', cursive;
+}
+
+li a {
+
+  border: 1px solid white;
+  border-radius: 5px ;
+  color: #E873E8;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+label{
+  border: 1px solid white;
+  border-radius: 5px ;
+  color: #E873E8;
+}
+
+h2 {
+  color: #E873E8;
+}
