@@ -18,10 +18,11 @@ get '/rentals/new' do
 end
 
 post '/rentals' do
-  rental = Rental.new(params)
-  rental.save
-  redirect to("/rentals")
+  Rental.new(params).save
+  redirect to '/rentals'
 end
+
+
 
 get '/rentals/:id' do
   @stocks = Stock.all

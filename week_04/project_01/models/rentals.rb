@@ -20,7 +20,16 @@ class Rental
     values = [@customer_id, @stock_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
+    stock = Stock.find(@stock_id)
+    stock.remove_inventory()
+    stock.update()
+
+    # Find the stock by stock_id
+    # Call a method no the stock to reduce Inventory
+    # Update that stock
   end
+
+
 
   def self.all()
     sql = "SELECT * FROM rentals"
@@ -71,6 +80,13 @@ class Rental
     sql = "DELETE FROM rentals WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+    stock = Stock.find(@stock_id)
+    stock.add_inventory()
+    stock.update()
+
+    # Find stock by its id
+    # Call amethod to increase inventory
+    # Update stock
   end
 
 end

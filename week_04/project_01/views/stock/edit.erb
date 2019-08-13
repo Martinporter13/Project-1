@@ -3,18 +3,18 @@
   <div class="form-wrapper">
 
     <div class="form-el">
-      <label for="name"> Name:</label>
-      <input type="text" name="name" id="name" value="<%= @stock.item_name %>"/>
+      <label for="item_name"> Name:</label>
+      <input type="text" name="item_name" id="item_name" value="<%= @stock.item_name %>"/>
     </div>
 
     <div class="form-el">
       <label for="inventory"> Inventory:</label>
-      <input type="text" name="inventory" id="inventory" value="<%= @stock.inventory %>"/>
+      <input type="number" name="inventory" id="inventory" value="<%= @stock.inventory %>"/>
     </div>
 
     <div class="form-el">
       <label for="price"> Price:</label>
-      <input type="text" name="price" id="price" value="<%= @stock.price %>"/>
+      <input type="number" name="price" id="price" value="<%= @stock.price %>"/>
     </div>
 
     <div class="form-el">

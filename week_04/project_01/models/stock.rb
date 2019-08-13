@@ -49,6 +49,16 @@ class Stock
     SqlRunner.run(sql, values)
   end
 
+  def remove_inventory()
+    @inventory -= 1
+
+  end
+
+  def add_inventory()
+    @inventory += 1
+    
+  end
+
   def delete()
 
     sql = "DELETE FROM stock WHERE id = $1"
@@ -65,4 +75,6 @@ class Stock
       customers = SqlRunner.run(sql, values)
       return customers.map{|customer| Customer.new(customer)}
     end
+
+
 end
