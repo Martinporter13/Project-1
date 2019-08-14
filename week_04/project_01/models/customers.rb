@@ -3,8 +3,8 @@ require_relative('./stock')
 
 class Customer
 
-attr_reader :id
-attr_accessor :name
+  attr_reader :id
+  attr_accessor :name
 
   def initialize(customer)
     @id = customer['id'].to_i if customer['id']
@@ -21,8 +21,8 @@ attr_accessor :name
 
   def self.delete_all()
 
-      sql = "DELETE FROM customers"
-      SqlRunner.run(sql)
+    sql = "DELETE FROM customers"
+    SqlRunner.run(sql)
 
   end
 
@@ -42,26 +42,26 @@ attr_accessor :name
 
   def update()
 
-  sql = "UPDATE customers SET name = $1 WHERE id = $2"
-  values = [@name, @id]
-  SqlRunner.run(sql, values)
-end
+    sql = "UPDATE customers SET name = $1 WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
+  end
 
-def delete()
+  def delete()
 
-  sql = "DELETE FROM customers WHERE id = $1"
-  values = [@id]
-  SqlRunner.run(sql, values)
-end
+    sql = "DELETE FROM customers WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
+  
+  def stock()
 
-def stock()
+    sql = "SELECT stock.* FROM stock INNER JOIN rentals
+    ON stock.id = rentals.stock_id WHERE rentals.customer_id = $1"
+    values = [@id]
 
-     sql = "SELECT stock.* FROM stock INNER JOIN rentals
-      ON stock.id = rentals.stock_id WHERE rentals.customer_id = $1"
-      values = [@id]
-
-      stock= SqlRunner.run(sql, values)
-      return stock.map{|stock| Stock.new(stock)}
-    end
+    stock= SqlRunner.run(sql, values)
+    return stock.map{|stock| Stock.new(stock)}
+  end
 end

@@ -23,8 +23,8 @@ class Stock
 
   def self.delete_all()
 
-      sql = "DELETE FROM stock"
-      SqlRunner.run(sql)
+    sql = "DELETE FROM stock"
+    SqlRunner.run(sql)
 
   end
 
@@ -56,7 +56,7 @@ class Stock
 
   def add_inventory()
     @inventory += 1
-    
+
   end
 
   def delete()
@@ -68,13 +68,13 @@ class Stock
 
   def customers()
 
-     sql = "SELECT customers.* FROM customers INNER JOIN rentals
-      ON customers.id = rentals.customer_id WHERE rentals.stock_id = $1"
-      values = [@id]
+    sql = "SELECT customers.* FROM customers INNER JOIN rentals
+    ON customers.id = rentals.customer_id WHERE rentals.stock_id = $1"
+    values = [@id]
 
-      customers = SqlRunner.run(sql, values)
-      return customers.map{|customer| Customer.new(customer)}
-    end
+    customers = SqlRunner.run(sql, values)
+    return customers.map{|customer| Customer.new(customer)}
+  end
 
 
 end

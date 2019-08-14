@@ -1,6 +1,7 @@
 html {
   font-family: 'Tangerine', cursive;
   font-size: 1.5em;
+  color: #E873E8;
 
 }
 
@@ -20,7 +21,7 @@ h1 {
 
 title {
 
-  color: magenta;
+  color: #E873E8;
   font-family: 'Tangerine', cursive;
 }
 
@@ -32,11 +33,14 @@ li a {
 
 }
 
+
+
 a {
   text-decoration: none;
 }
 
 ul {
+  color: #E873E8;
   list-style-type: none;
 }
 
@@ -48,4 +52,8 @@ label{
 
 h2 {
   color: #E873E8;
+}
+
+p {
+  color:  #E873E8;
 }

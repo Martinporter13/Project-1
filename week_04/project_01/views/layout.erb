@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
-@import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap');
-</style>
-  <title>LotusMarket</title>
-  <link rel="stylesheet" type="text/css" href="/structure.css">
-</head>
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap');
+    </style>
 
-<body>
-<main>
-  <nav id="menu">
-    <ul>
-    <li class="menu-item"><a href="/">Home</a></li>
-    <li class="menu-item"><a href="/customers">Customers</a></li>
-    <li class="menu-item"><a href="/customers/new">Create Customer Profile</a></li>
-    <li class="menu-item"><a href="/stock">Available Decks</a></li>
-    <li class="menu-item"><a href="/stock/new">Create New Deck</a></li>
-    <li class="menu-item"><a href="/rentals">Current Rentals</a></li>
-    <li class="menu-item"><a href="/rentals/new">Create New Rental</a></li>
-    </ul>
-  </nav>
-  <section>
-  <%= yield %>
-  </section>
-  </main>
-</body>
+    <title>LotusMarket</title>
+      <link rel="stylesheet" type="text/css" href="/structure.css">
+  </head>
+
+  <body>
+    <main>
+      <nav id="menu">
+        <ul>
+          <li class="menu-item"><a href="/">Home</a></li>
+          <li class="menu-item"><a href="/customers">Customers</a></li>
+          <li class="menu-item"><a href="/customers/new">Create Customer Profile</a></li>
+          <li class="menu-item"><a href="/stock">Available Decks</a></li>
+          <li class="menu-item"><a href="/stock/new">Create New Deck</a></li>
+          <li class="menu-item"><a href="/rentals">Current Rentals</a></li>
+          <li class="menu-item"><a href="/rentals/new">Create New Rental</a></li>
+        </ul>
+      </nav>
+      <section>
+        <%= yield %>
+      </section>
+    </main>
+  </body>
 </html>

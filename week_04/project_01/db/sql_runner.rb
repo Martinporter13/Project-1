@@ -12,7 +12,7 @@ class SqlRunner
     ensure
       db.close()
     end
-      return result
+    return result
   end
 
 end

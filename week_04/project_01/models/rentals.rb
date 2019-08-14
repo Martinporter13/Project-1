@@ -22,7 +22,6 @@ class Rental
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
     stock = Stock.find(@stock_id)
-    binding.pry
     stock.remove_inventory()
     stock.update()
 
@@ -49,8 +48,8 @@ class Rental
   end
 
   def self.delete_all()
-      sql = "DELETE FROM rentals"
-      SqlRunner.run(sql)
+    sql = "DELETE FROM rentals"
+    SqlRunner.run(sql)
   end
 
   def customer()

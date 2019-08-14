@@ -2,9 +2,10 @@
 
 
 <% for customer in @stock.customers %>
-<p><%=customer.name%></p>
+  <p><%=customer.name%></p>
 <% end %>
 <a href="/stock/<%= @stock.id %>/edit">Edit</a>
+
 <form action="/stock/<%= @stock.id %>/delete" method="POST">
   <input type="submit" value="Delete">
 </form>
